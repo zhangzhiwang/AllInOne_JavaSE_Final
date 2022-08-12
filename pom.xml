@@ -5,7 +5,10 @@
   <groupId>com.kuaishou</groupId>
   <artifactId>AllInOne_JavaSE_Final</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <modules>
+    <module>GuPaoEdu_Jdk8</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>AllInOne_JavaSE_Final</name>
   <url>http://maven.apache.org</url>
