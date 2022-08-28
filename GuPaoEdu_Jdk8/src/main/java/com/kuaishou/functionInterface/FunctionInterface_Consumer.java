@@ -11,7 +11,7 @@ public class FunctionInterface_Consumer {
             System.out.println(i + 1);
         }, 10);
 
-        met2(i -> {
+        met2AndThen(i -> {
             System.out.println("第一个处理：" + (i + 1));
         }, i -> {
             System.out.println("第二个处理：" + (i - 1));
@@ -22,7 +22,8 @@ public class FunctionInterface_Consumer {
         consumer.accept(i);
     }
 
-    private static void met2(Consumer<Integer> consumer1, Consumer<Integer> consumer2, int i) {
-        consumer1.andThen(consumer2).accept(i);// TODO 为什么andThen方法后面还要调一下accept方法呢？不调用为什么不行呢？要结合Consumer类的andThen方法的源码分析下
+    private static void met2AndThen(Consumer<Integer> consumer1, Consumer<Integer> consumer2, int i) {
+        // andThen方法的意思是先走consumer1的accept方法，再走consumer2的accept方法
+        consumer1.andThen(consumer2).accept(i);// TODO 为什么andThen方法后面还要调一下accept方法呢？andThen方法内部不是调用accept方法了吗？
     }
 }
